@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import logo from '$lib/images/Arco.png';
-	import github from '$lib/images/github.svg';
+
 </script>
 
 <header>
@@ -54,9 +54,10 @@
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+		width: 2.5em;
+		height: 2.5em;
 		object-fit: contain;
+		margin-left: 1rem;
 	}
 
 	nav {
