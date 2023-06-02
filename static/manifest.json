@@ -1,19 +1,19 @@
 {
-  "name": "Your App Name",
-  "short_name": "App",
-  "description": "Description of your app",
+  "name": "Arco Trailers",
+  "short_name": "Arco",
+  "description": "Arco Trailers - By El Arco",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#000",
+  "background_color": "#FFA500",
+  "theme_color": "#FF8000",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/favicon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/favicon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
