@@ -7,9 +7,8 @@
 	<title>Remolques - Arco Trailers</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
-
 <div class="video-background">
-    <video autoplay muted loop>
+    <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
         <source src={trailer_video} type="video/mp4">
     </video>
 </div>
