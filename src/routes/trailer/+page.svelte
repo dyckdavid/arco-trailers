@@ -7,6 +7,14 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 
+<div class="video-background">
+    <video autoplay muted loop>
+        <source src="./src/lib/images/introvideo.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="video-spacer"></div>
+
 <div class="flex items-center h-screen space-x-4 pl-10">
     <img src={trailer_one} class="w-78 h-78 object-cover -ml-80" alt="Description">
     <div class="text-right flex-grow">
@@ -32,3 +40,38 @@
         <p>Descripcion del Remolque no. 3</p>
     </div>
 </div>
+
+<style>
+
+
+	h1 {
+		width: 100%;
+	}
+
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .video-spacer {
+    height: 100vh; /* This should match the height of your video */
+  }
+
+
+</style>

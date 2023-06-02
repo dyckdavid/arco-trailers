@@ -1,10 +1,60 @@
 <script>
 	import { page } from '$app/stores';
 	import logo from '$lib/images/Arco.png';
+	import github from '$lib/images/github.svg';
+	import { writable } from 'svelte/store';
+	import { onMount } from 'svelte';
 
+
+	let scrolled = false;
+
+onMount(() => {
+  function handleScroll() {
+	scrolled = window.scrollY > 1;
+  }
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+	window.removeEventListener('scroll', handleScroll);
+  }
+});
+	
 </script>
 
-<header>
+<svelte:head>
+  <style>
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+      background-color: transparent;
+    }
+
+    header.scrolled {
+      box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.3);
+	  background-color: rgba(211, 211, 211, 0.5);
+	  
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0px;
+      background: black;
+      
+    }
+
+    header.scrolled::before {
+      width: 100%;
+	  
+    }
+  </style>
+</svelte:head>
+
+<header class:scrolled={scrolled}>
 	<div class="corner">
 		<a href="/">
 			<img src={logo} alt="SvelteKit" />
@@ -37,8 +87,14 @@
 <style>
 	header {
 		display: flex;
+		
 		justify-content: space-between;
+		position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure navbar is above other content */
+     /* Ensure the navbar has a background */
 	}
+
 
 	.corner {
 		width: 3em;
@@ -54,10 +110,9 @@
 	}
 
 	.corner img {
-		width: 2.5em;
-		height: 2.5em;
+		width: 2em;
+		height: 2em;
 		object-fit: contain;
-		margin-left: 1rem;
 	}
 
 	nav {
