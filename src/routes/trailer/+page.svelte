@@ -1,5 +1,6 @@
 <script>
 	import trailer_one from '$lib/images/trailer1.png';
+    import trailer_video from '$lib/images/introvideo.mp4';
 </script>
 
 <svelte:head>
@@ -9,7 +10,7 @@
 
 <div class="video-background">
     <video autoplay muted loop>
-        <source src="./src/lib/images/introvideo.mp4" type="video/mp4">
+        <source src={trailer_video} type="video/mp4">
     </video>
 </div>
 
