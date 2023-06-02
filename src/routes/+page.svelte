@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Arco Trailers</title>
 	<meta name="description" content="Arco trailers - designed by David Dyck" />
 </svelte:head>
 

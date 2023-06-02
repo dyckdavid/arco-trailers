@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>About</title>
+	<title>Acerca Nosotros - Arco Trailers</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 

@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Remolques</title>
+	<title>Remolques - Arco Trailers</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
