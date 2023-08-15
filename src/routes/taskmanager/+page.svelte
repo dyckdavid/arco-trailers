@@ -131,6 +131,7 @@
 
 >
     <!-- Quantity or Checkmark Circle -->
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="qty-circle bg-blue-500 text-white rounded-full w-11 h-10 flex items-center justify-center" on:click={() => toggleDone(index)}>
         {#if todo.done}
             <span class="text-2xl transition-all ease-in-out duration-300">✓</span>
