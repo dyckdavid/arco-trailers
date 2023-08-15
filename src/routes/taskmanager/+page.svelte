@@ -94,7 +94,7 @@
     <!-- Input Form -->
     <div class="flex justify-center">
       <div class="bg-white p-8 rounded shadow-lg w-full md:w-1/2">
-        <h1 class="text-2xl mb-4 text-center text-blue-700">To-Do List</h1>
+        <h1 class="text-2xl mb-4 text-center text-blue-700">To-Do List Arco</h1>
         <div class="mb-4">
           <input
             type="text"
