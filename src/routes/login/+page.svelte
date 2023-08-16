@@ -1,6 +1,6 @@
 <script lang="ts">
     import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-    import { auth } from "../../firebase"; // Path to your firebase.js file
+    import { auth } from "../../lib/firebase"; // Path to your firebase.js file
     import { goto } from '$app/navigation';
   
     let email: string = "";

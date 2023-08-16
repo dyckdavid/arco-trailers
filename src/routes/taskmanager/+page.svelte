@@ -4,7 +4,7 @@
     import { onMount } from 'svelte';
     import { getAuth, onAuthStateChanged } from 'firebase/auth';
     import { goto } from '$app/navigation';
-    import { db } from '../../firebase';
+    import { db } from '../../lib/firebase';
   
     interface Todo {
       id?: string;
