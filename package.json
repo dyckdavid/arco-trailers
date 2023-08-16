@@ -15,6 +15,7 @@
     "@sveltejs/kit": "^1.5.0",
     "@types/cookie": "^0.5.1",
     "autoprefixer": "^10.4.15",
+    "firebase": "^10.1.0",
     "postcss": "^8.4.27",
     "svelte": "^3.54.0",
     "svelte-adapter-firebase": "^0.15.0",
@@ -26,8 +27,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@firebase/auth": "^1.1.0",
-    "firebase": "^10.1.0"
+    "@firebase/auth": "^1.1.0"
   },
   "description": "Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).",
   "main": "postcss.config.js",
