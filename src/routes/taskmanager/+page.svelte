@@ -120,8 +120,7 @@ const db = getFirestore(app);
         <div class="mb-4">
           <input
             type="text"
-            class="class:p-2={true} class:w-full={true} class:rounded={true} class:border={true} class:border-gray-300={true} class:border-blue-500={editingIndex !== null} class:focus:ring={true} class:focus:ring-blue-200={true} class:focus:ring-opacity-50={true}
-            "
+            class="p-2 w-full rounded border border-gray-300 {editingIndex !== null ? 'border-blue-500' : ''} focus:ring focus:ring-blue-200 focus:ring-opacity-50"
             placeholder="Add a new task..."
             bind:value={newTodo}
             on:keydown={(e) => e.key === 'Enter' && addTodo()}
