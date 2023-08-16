@@ -107,6 +107,9 @@ const db = getFirestore(app);
         todos = [...todos];
       }
     }
+
+    export const prerender = false;
+
   </script>
   
   <div class="container mx-auto p-6">
