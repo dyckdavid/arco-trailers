@@ -1,8 +1,28 @@
 <script lang="ts">
     import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-    import { auth } from "../firebase"; // Path to your firebase.js file
     import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
+    import { initializeApp } from 'firebase/app';
+    import { getFirestore, collection, addDoc, query, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore';
+
+import { onAuthStateChanged } from 'firebase/auth';
+
+
+
+const firebaseConfig = {
+  // your config here
+  apiKey: "AIzaSyBzM5OnMUdBrGWBcZotDxlRh0qEnwLvtNk",
+    authDomain: "arco-trailers.firebaseapp.com",
+    projectId: "arco-trailers",
+    storageBucket: "arco-trailers.appspot.com",
+    messagingSenderId: "557877308737",
+    appId: "1:557877308737:web:1aaaed23f6537f4ca585c0"
+};
+
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
   
     let email: string = "";
     let password: string = "";
