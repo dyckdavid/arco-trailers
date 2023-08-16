@@ -41,7 +41,7 @@ const db = getFirestore(app);
   
     // Fetch todos on mount
     onMount(() => {
-      const auth = getAuth();
+      
       onAuthStateChanged(auth, (user) => {
         if (!user) {
           goto('/login');
