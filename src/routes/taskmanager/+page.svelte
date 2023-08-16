@@ -108,7 +108,7 @@ const db = getFirestore(app);
       }
     }
 
-    export const prerender = false;
+    
 
   </script>
   
