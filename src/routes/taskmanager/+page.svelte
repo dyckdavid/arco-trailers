@@ -116,32 +116,32 @@ const db = getFirestore(app);
     <!-- Input Form -->
     <div class="flex justify-center">
       <div class="bg-white p-8 rounded shadow-lg w-full md:w-1/2">
-        <h1 class="text-2xl mb-4 text-center text-blue-700">To-Do List Arco</h1>
+        <h1 class="text-2xl mb-4 text-center text-blue-700">Lista de Deseos Arco</h1>
         <div class="mb-4">
           <input
             type="text"
             class="p-2 w-full rounded border border-gray-300 {editingIndex !== null ? 'border-blue-500' : ''} focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-            placeholder="Add a new task..."
+            placeholder="Agregar nuevo Deseo"
             bind:value={newTodo}
             on:keydown={(e) => e.key === 'Enter' && addTodo()}
           />
           <input
             type="number"
             class="p-2 w-full mt-2 rounded border border-gray-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-            placeholder="Quantity..."
+            placeholder="Cantidad"
             bind:value={qty}
           />
           <input
             type="text"
             class="p-2 w-full mt-2 rounded border border-gray-300 {editingIndex !== null ? 'border-blue-500' : ''} focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-            placeholder="Assign to..."
+            placeholder="Asignar a..."
             bind:value={assignee}
           />
           <button
             class="p-2 w-full mt-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all ease-in-out duration-300"
             on:click={addTodo}
           >
-            {editingIndex !== null ? 'Update Task' : 'Add Task'}
+            {editingIndex !== null ? 'Actualizar' : 'Agregar'}
           </button>
         </div>
         <ul>
@@ -171,8 +171,8 @@ const db = getFirestore(app);
                     </div>
                   </div>
                   <div>
-                    <button class="text-blue-500 hover:text-blue-700 mr-2" on:click={() => editTodo(index)}>Edit</button>
-                    <button class="text-red-500 hover:text-red-700" on:click={() => removeTodo(index)}>Remove</button>
+                    <button class="text-blue-500 hover:text-blue-700 mr-2" on:click={() => editTodo(index)}>Editar</button>
+                    <button class="text-red-500 hover:text-red-700" on:click={() => removeTodo(index)}>Borrar</button>
                   </div>
                 </div>
               </li>
