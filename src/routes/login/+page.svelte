@@ -1,3 +1,9 @@
+<svelte:head>
+	<title>Login</title>
+	<meta name="description" content="Login Arco Trailers" />
+</svelte:head>
+
+
 <script lang="ts">
     import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
     import { goto } from '$app/navigation';

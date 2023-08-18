@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>Lista de Deseos</title>
+	<meta name="description" content="Lista de Deseos Arco Trailers" />
+</svelte:head>
+
 <script lang="ts">
     import { fade, fly, scale } from 'svelte/transition';
     import { getFirestore, collection, addDoc, query, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore';
@@ -38,28 +43,32 @@ const db = getFirestore(app);
     let qty: number = 0;
     let todos: Todo[] = [];
     let editingIndex: number | null = null;
+
+    let loading = true;
   
     // Fetch todos on mount
     onMount(() => {
-      
-      onAuthStateChanged(auth, (user) => {
-        if (!user) {
-          goto('/login');
-        } else {
-          const todosCollection = collection(db, 'todos');
-          const q = query(todosCollection);
-          getDocs(q).then((querySnapshot) => {
-            todos = querySnapshot.docs.map((doc) => ({
-              id: doc.id,
-              task: doc.data().task,
-              assignee: doc.data().assignee,
-              qty: doc.data().qty,
-              done: doc.data().done,
-            }));
-          });
-        }
-      });
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        goto('/login');
+      } else {
+        loading = true; // Set loading to true before fetching
+        const todosCollection = collection(db, 'todos');
+        const q = query(todosCollection);
+        getDocs(q).then((querySnapshot) => {
+          todos = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            task: doc.data().task,
+            assignee: doc.data().assignee,
+            qty: doc.data().qty,
+            done: doc.data().done,
+          }));
+          loading = false; // Set loading to false after fetching
+        });
+      }
     });
+  });
+
   
     async function addTodo() {
       if (newTodo.trim() !== '') {
@@ -144,6 +153,20 @@ const db = getFirestore(app);
             {editingIndex !== null ? 'Actualizar' : 'Agregar'}
           </button>
         </div>
+        {#if loading} <!-- Show loading indicator when loading -->
+        <div class="text-center py-4">
+          <div class="loader"></div>
+          <div class="flex justify-center items-center">
+            <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A9.004 9.004 0 014 12H0c0 5.52 4.477 10 10 10v-4a6 6 0 01-4-1.709z"></path>
+            </svg>
+          </div>
+          
+        </div>
+      {:else}
+        <!-- Existing form and list code here -->
+        
         <ul>
             {#each todos as todo, index (todo.task)}
             <li
@@ -178,11 +201,30 @@ const db = getFirestore(app);
               </li>
             {/each}
           </ul>
+      
+    
+
+      {/if}
+      
       </div>
     </div>
   </div>
   
   <style>
+    .loader {
+    border-color: #f3f3f3;
+    border-top-color: currentColor;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
     .qty-circle {
       cursor: pointer; /* Change cursor to pointer on hover */
       transition: background-color 0.3s ease-in-out; /* Add transition for smooth color change */
