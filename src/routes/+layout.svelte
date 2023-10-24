@@ -18,7 +18,7 @@
 	</main>
 
 	<footer>
-		<p>Arco Trailers <a href="https://estufaselarco.com.mx">Arco</a></p>
+		<p><a href="https://estufaselarco.com.mx">Arco</a></p>
 	</footer>
 </div>
 
