@@ -154,17 +154,10 @@ const db = getFirestore(app);
           </button>
         </div>
         {#if loading} <!-- Show loading indicator when loading -->
-        <div class="text-center py-4">
-          <div class="loader"></div>
-          <div class="flex justify-center items-center">
-            <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A9.004 9.004 0 014 12H0c0 5.52 4.477 10 10 10v-4a6 6 0 01-4-1.709z"></path>
-            </svg>
-          </div>
-          
-        </div>
-      {:else}
+<div class="flex justify-center items-center py-4"> <!-- Center the loader -->
+  <div class="loader"></div> <!-- Custom loader -->
+</div>
+{:else}
         <!-- Existing form and list code here -->
         
         <ul>
