@@ -210,11 +210,16 @@ const db = getFirestore(app);
     </div>
   </div>
   
-  <style>
-    .loader {
-    border-color: #f3f3f3;
-    border-top-color: currentColor;
-    animation: spin 1s linear infinite;
+
+
+<style>
+  .loader {
+    border: 4px solid #f3f3f3; /* Light gray border */
+    border-top: 4px solid currentColor; /* Top border in the current color for the loading part */
+    border-radius: 50%; /* Makes it a perfect circle */
+    width: 40px; /* Width of the loader */
+    height: 40px; /* Height of the loader */
+    animation: spin 1s linear infinite; /* Keeps the spinning animation */
   }
 
   @keyframes spin {
@@ -225,12 +230,14 @@ const db = getFirestore(app);
       transform: rotate(360deg);
     }
   }
-    .qty-circle {
-      cursor: pointer; /* Change cursor to pointer on hover */
-      transition: background-color 0.3s ease-in-out; /* Add transition for smooth color change */
-    }
+
+  .qty-circle {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease-in-out; /* Add transition for smooth color change */
+  }
+
+  .qty-circle:hover {
+    background-color: #3355FF; /* Darker blue color on hover */
+  }
+</style>
   
-    .qty-circle:hover {
-      background-color: #3355FF; /* Darker blue color on hover */
-    }
-  </style>
