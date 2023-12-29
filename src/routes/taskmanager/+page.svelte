@@ -266,25 +266,37 @@
   }
 
   .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%; /* Adjusted width */
+  height: 95vh; /* Adjusted height */
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto; /* Add scroll for very large images */
+}
 
-  .popup img {
-    max-width: 90%;
-    max-height: 80vh;
-    margin-bottom: 20px;
+.popup img {
+  max-width: 100%; /* Image takes full width of the popup */
+  max-height: 85vh; /* Adjusted height */
+  object-fit: contain; /* Adjust how the image fits within its container */
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .popup {
+    width: 98%;
+    height: 98vh;
   }
+}
 
   li {
   cursor: pointer;
