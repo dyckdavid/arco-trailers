@@ -71,10 +71,10 @@ onMount(() => {
 			</li>
 
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">ACERCA NOSOTROS</a>
+				<a href="/about">NOSOTROS</a>
 			</li>
 <li aria-current={$page.url.pathname === '/taskmanager' ? 'page' : undefined}>
-				<a href="/taskmanager">Admin</a>
+				<a href="/taskmanager">ADMIN</a>
 			</li>
 
 
